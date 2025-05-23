@@ -1,7 +1,7 @@
 
 # 🎬 IMDb Movies Portfolio Project
 
-**Code**: `IMDb_Movies_Analysis.sql`  
+**Code**: `/Queries`  
 **Database**: PostgreSQL  
 **Dataset**: IMDb Datasets (TSV files from [IMDb Datasets](https://www.imdb.com/interfaces/))  
 **Focus**: In-depth SQL analysis of global movie data — ratings, genres, creators, and trends.
