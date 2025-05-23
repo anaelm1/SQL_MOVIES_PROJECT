@@ -1,7 +1,7 @@
 # IMDb Movie Explorer: A SQL Portfolio Project
 
 ## 📘 Overview
-This project explores the IMDb dataset, focusing on movies only. It answers 10 analytical questions using PostgreSQL and showcases SQL capabilities across filtering, joins, aggregation, subqueries, and string manipulation.
+This project explores the IMDb dataset, focusing on movies only. It answers 10 analytical questions using PostgreSQL and showcases SQL capabilities across filtering, joins, aggregation, subqueries, and string manipulation. The dataset we are working on is of (exact figure)
 
 ## 🛠️ Tools Used
 - PostgreSQL (via VS Code)
@@ -27,5 +27,5 @@ This project explores the IMDb dataset, focusing on movies only. It answers 10 a
 6. Runtime averages by genre
 7. Consistently high-rated writers
 8. Genre popularity by decade
-9. Ratings of adult movies
+9. Countries with most top-rated movies
 10. Writer-director crossovers
