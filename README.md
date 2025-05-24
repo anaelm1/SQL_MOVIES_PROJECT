@@ -1,96 +1,131 @@
+# 🎥 IMDb Movies Portfolio Project
 
-# 🎬 IMDb Movies Portfolio Project
-
-**Code**: `/Queries`  
-**Database**: PostgreSQL  
-**Dataset**: IMDb Datasets (TSV files from [IMDb Datasets](https://www.imdb.com/interfaces/))  
+**Code**: `/Queries`
+**Database**: PostgreSQL
+**Dataset**: IMDb Datasets ([IMDb Interfaces](https://www.imdb.com/interfaces/))
 **Focus**: In-depth SQL analysis of global movie data — ratings, genres, creators, and trends.
 
 ---
 
 ## 📌 Project Description
 
-This project investigates a rich dataset of IMDb movie records, excluding TV series and shorts, to uncover insights about the global film industry. The analysis focuses on trends in ratings, genres, prolific creators, and global contributions to cinema, offering a full demonstration of intermediate to advanced SQL techniques.
+This project explores the rich IMDb movie dataset to uncover patterns in movie production, viewer preferences, and contributions from key creators. By excluding non-movie types (e.g., TV episodes and adult titles), the analysis remains sharply focused on feature-length films. A full cycle of database design, data cleaning, SQL querying, and visualization delivers insights into the film industry.
 
 ### Key Stages:
-- Database Creation & Data Import
-- Data Cleaning & Normalization
-- Exploratory Data Analysis (EDA)
-- Visual Report Preparation
+
+* PostgreSQL Database Setup
+* Data Cleaning & Normalization
+* Query Design & EDA (Exploratory Data Analysis)
+* AI-generated Visualizations (ChatGPT)
 
 ---
 
 ## 📁 Datasets Used
 
-IMDb files included in this analysis:
+| File                      | Description                                         |
+| ------------------------- | --------------------------------------------------- |
+| `title.basics.tsv.gz`     | Core movie metadata (genres, runtime, release year) |
+| `title.ratings.tsv.gz`    | IMDb average ratings and vote counts                |
+| `title.crew.tsv.gz`       | Director and writer IDs                             |
+| `name.basics.tsv.gz`      | Names and professions of creators                   |
+| `title.principals.tsv.gz` | Cast and crew roles for each title                  |
+| `title.akas.tsv.gz`       | Regional and translated titles                      |
 
-- `title.basics.tsv.gz` – Core metadata for movies
-- `title.ratings.tsv.gz` – IMDb user ratings and vote counts
-- `title.crew.tsv.gz` – Director and writer identifiers
-- `title.principals.tsv.gz` – Key cast and crew for each title
-- `name.basics.tsv.gz` – People in the film industry
-- `title.akas.tsv.gz` – Title region and localization data
+Database schema:
 
----
-
-## 🛠️ Technologies
-
-- **Database**: PostgreSQL  
-- **Editor**: Visual Studio Code  
-- **Language**: SQL  
-- **Visualization**: AI-generated or Markdown visuals
+![Database ERD](sandbox:/mnt/data/Flow%20chart%20of%20complete%20database.png)
 
 ---
 
-## 🔧 Project Workflow
+## 🛠️ Technologies Used
 
-### 1. Database Setup
-- Initialized PostgreSQL database via terminal in VS Code.
-- Defined normalized schemas matching the IMDb structure.
-- Imported data using `COPY` from local TSV files stored at `D:/SQL_MOVIES_PROJECT/Data downloaded from IMDb`.
-
-### 2. Data Cleaning
-- Filtered out non-movie content (e.g., TV shows, episodes).
-- Replaced invalid fields (e.g., `\N`) with NULLs or valid types.
-- Transformed string fields into usable formats (e.g., arrays, integers).
-
-### 3. Exploratory Data Analysis (EDA)
-- Developed 10 queries that progressively apply more advanced SQL techniques.
-- Focused solely on movies to maintain scope clarity and depth.
+* **PostgreSQL** for data storage and querying
+* **SQL** (CTEs, JOINS, aggregation, filtering)
+* **Python/Matplotlib** via ChatGPT for visual generation
+* **Visual Studio Code** as development environment
 
 ---
 
-## 🧠 Analysis Questions & SQL Techniques
+## 🧐 Analytical Questions & SQL Techniques
 
-| # | Question | SQL Skills |
-|--:|----------|------------|
-| 1 | Top 20 highest-rated movies (min 10K votes) | Filtering, sorting, `JOIN`, `LIMIT` |
-| 2 | Movie count by release year (last 20 years) | `GROUP BY`, date filtering |
-| 3 | Most common movie genres | `STRING_TO_ARRAY`, `UNNEST`, `GROUP BY` |
-| 4 | Directors with most high-rated movies | Multi-table `JOIN`, `HAVING`, `COUNT()` |
-| 5 | Average runtime by genre | `AVG()`, `GROUP BY`, genre processing |
----
-
-## 🔍 Advanced SQL Concepts Applied
-
-- **Multi-table Joins**: Using `INNER` and `LEFT JOIN` to combine data across six normalized tables.
-- **Filtering & Aggregation**: `WHERE`, `GROUP BY`, `HAVING`, combined with `COUNT`, `AVG`, and `SUM`.
-- **String & Array Handling**: Use of `STRING_TO_ARRAY`, `UNNEST`, and `REGEXP` functions.
-- **Data Type Conversion**: Explicit casting and cleanup of year, runtime, and ID fields.
-- **Views & CTEs**: Modular query logic and reusable components.
-- **Window Functions**: Advanced row-wise calculations and rankings.
+|  # | Question                                 | SQL Concepts                     |
+| -: | ---------------------------------------- | -------------------------------- |
+|  1 | Top 20 highest-rated movies (10k+ votes) | JOIN, filtering, sorting, LIMIT  |
+|  2 | Movie count by year (last 20 years)      | GROUP BY, WHERE filter           |
+|  3 | Most frequent movie genres               | UNNEST, STRING\_TO\_ARRAY, COUNT |
+|  4 | Directors with most high-rated movies    | Multi-table JOIN, HAVING         |
+|  5 | Avg. runtime by genre                    | Nested SELECT, GROUP BY, AVG     |
 
 ---
 
-## ✅ Learning Outcomes
+## 📊 Visual Analysis
 
-This project demonstrates proficiency in:
+### 1. Top 20 IMDb Movies by Rating
 
-- Working with large, real-world datasets
-- Complex SQL query design and debugging
-- Data transformation, normalization, and reporting
-- Domain-specific reasoning in film and entertainment data
+![Top Movies](sandbox:/mnt/data/top_20_movies_bar_chart.png)
+*Generated by ChatGPT*
+
+This chart shows the most critically acclaimed movies according to IMDb ratings, filtered to include only those with at least 10,000 votes. Notable entries include classics like *The Shawshank Redemption*, *The Godfather*, and *12 Angry Men*. The visual highlights how some lesser-known titles like *The Chaos Class* and *Ramayana* have gained high ratings from niche audiences, demonstrating the breadth of global cinema.
 
 ---
 
-> ⭐ **This project is a comprehensive portfolio showcase of SQL proficiency using real-world IMDb movie data.**
+### 2. Number of Movies Released Each Year (2005–2024)
+
+![Movies by Year](sandbox:/mnt/data/movies_per_year_2005_2024.png)
+*Generated by ChatGPT*
+
+Movie production saw steady growth until 2019, peaking just before the COVID-19 pandemic. 2020 and 2021 show a clear drop, followed by recovery and stabilization in the years after. This trend is indicative of both the disruption caused by global events and the industry's resilience.
+
+---
+
+### 3. Most Common Movie Genres
+
+![Genres](sandbox:/mnt/data/most_common_movie_genres.png)
+*Generated by ChatGPT*
+
+Drama dominates the genre distribution, followed by Documentary and Comedy. Action, Romance, and Thriller also remain popular. This chart was generated by splitting multi-genre entries using `STRING_TO_ARRAY` and `UNNEST`, which ensures all genres for a single movie are fairly counted. It reflects global storytelling preferences leaning toward emotion, reality, and entertainment.
+
+---
+
+### 4. Directors with Most Highly-Rated Movies
+
+![Top Directors](sandbox:/mnt/data/top_directors_high_rated_movies.png)
+*Generated by ChatGPT*
+
+This visual spotlights directors who have produced the most movies rated above 8 on IMDb. *Dylan Verrechia* and *Sergey A.* top the list with over 25 titles. This suggests not only a strong creative vision but also consistency in delivering critically appreciated content. Industry legends like *Satyajit Ray* and *Christopher Nolan* also appear, validating the query's effectiveness.
+
+---
+
+### 5. Average Runtime by Genre
+
+![Runtime by Genre](sandbox:/mnt/data/avg_runtime_by_genre_darkgrid.png)
+*Generated by ChatGPT*
+
+Action and Musical films average the longest runtimes, often exceeding 100 minutes. Documentaries, Westerns, and Shorts are significantly shorter. This data can be useful for filmmakers, editors, and content planners to set benchmarks for pacing and structure.
+
+---
+
+## 🔍 Advanced SQL Techniques Applied
+
+* **Joins**: Multi-table joins between ratings, crew, and name data
+* **UNNEST & STRING\_TO\_ARRAY**: Handling multi-genre fields
+* **Filtering & Grouping**: With `WHERE`, `HAVING`, `GROUP BY`
+* **Aggregate Functions**: `COUNT`, `AVG`, `MAX`, `MIN`
+* **Date Logic**: Filtering by year range (last 20 years)
+
+---
+
+## ✅ Key Takeaways
+
+* Built a normalized SQL database and imported IMDb data
+* Designed and optimized five insightful queries
+* Used AI-generated Matplotlib visuals to bring SQL results to life
+* Learned to translate raw data into industry-relevant insights
+
+---
+
+## 🌟 Final Words
+
+This project not only reinforces intermediate to advanced SQL skills but also offers a deep dive into the global movie industry. From discovering the most beloved films to identifying prolific creators and runtime trends, each insight adds value to both technical and cinematic perspectives.
+
+> 🔧 Built with SQL, analyzed with logic, and visualized with AI.
