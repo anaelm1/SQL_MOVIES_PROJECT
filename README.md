@@ -38,7 +38,7 @@ IMDb files included in this analysis:
 - **Database**: PostgreSQL  
 - **Editor**: Visual Studio Code  
 - **Language**: SQL  
-- **Visualization** *(Planned)*: AI-generated or Markdown visuals
+- **Visualization**: AI-generated or Markdown visuals
 
 ---
 
@@ -68,13 +68,7 @@ IMDb files included in this analysis:
 | 2 | Movie count by release year (last 20 years) | `GROUP BY`, date filtering |
 | 3 | Most common movie genres | `STRING_TO_ARRAY`, `UNNEST`, `GROUP BY` |
 | 4 | Directors with most high-rated movies | Multi-table `JOIN`, `HAVING`, `COUNT()` |
-| 5 | Most prolific actors/actresses | Aggregation, person-movie relationships |
-| 6 | Average runtime by genre | `AVG()`, `GROUP BY`, genre processing |
-| 7 | Writers with highest average ratings | `JOIN`, `GROUP BY`, `AVG()`, `HAVING` |
-| 8 | Most popular genres by decade | Derived columns, `GROUP BY` |
-| 9 | Countries with most top-rated movies | Regional filtering, ratings, aggregation |
-| 10 | Writer-directors of the same movie | Dual filtering, subqueries |
-
+| 5 | Average runtime by genre | `AVG()`, `GROUP BY`, genre processing |
 ---
 
 ## 🔍 Advanced SQL Concepts Applied
@@ -83,16 +77,8 @@ IMDb files included in this analysis:
 - **Filtering & Aggregation**: `WHERE`, `GROUP BY`, `HAVING`, combined with `COUNT`, `AVG`, and `SUM`.
 - **String & Array Handling**: Use of `STRING_TO_ARRAY`, `UNNEST`, and `REGEXP` functions.
 - **Data Type Conversion**: Explicit casting and cleanup of year, runtime, and ID fields.
-- **(Planned) Views & CTEs**: Modular query logic and reusable components.
-- **(Planned) Window Functions**: Advanced row-wise calculations and rankings.
-
----
-
-## 📈 What’s Next?
-
-- Create AI-generated visual charts for each query’s output.
-- Build a professional markdown or static dashboard layout.
-- Export project to GitHub with queries, outputs, and README.
+- **Views & CTEs**: Modular query logic and reusable components.
+- **Window Functions**: Advanced row-wise calculations and rankings.
 
 ---
 
