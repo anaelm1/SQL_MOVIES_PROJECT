@@ -1,4 +1,4 @@
-# 🎥 IMDb Movies Portfolio Project
+# 🎥 IMDb Movies Project
 
 **Code**: `/Queries`
 
