@@ -33,7 +33,7 @@ This project explores the rich IMDb movie dataset to uncover patterns in movie p
 
 Database schema:
 
-![Database ERD](sandbox:/mnt/data/Flow%20chart%20of%20complete%20database.png)
+![Database ERD](Visuals/Flow chart of complete database.png)
 
 ---
 
