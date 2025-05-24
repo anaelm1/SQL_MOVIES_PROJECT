@@ -12,7 +12,7 @@
 
 ## 📌 Project Description
 
-This project explores the rich IMDb movie dataset to uncover patterns in movie production, viewer preferences, and contributions from key creators. The analysis remains sharply focused on feature-length films by excluding non-movie types (e.g., TV episodes and adult titles). A full cycle of database design, data cleaning, SQL querying, and visualization delivers insights into the film industry.
+This project explores the rich IMDb movie dataset to uncover patterns in movie production, viewer preferences, and contributions from key creators. The analysis remains sharply focused on feature-length films by excluding non-movie types (e.g., TV episodes and adult titles). A full cycle of database design, data cleaning, SQL querying, and visualization delivers insights into the film industry. The dataset on which the research is done is of around 700,000 unique movies. 
 
 ### Key Stages:
 
